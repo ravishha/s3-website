@@ -5,66 +5,70 @@ Please use the below order in your CICD tool to build this using a pipeline.
 
 Dev Init:
 
-    terraform init -var-files=dev.tfvars
+    TF_VAR_ENVIRONMENT=dev terragrunt init -var-files=dev.tfvars
 
 Dev Validate:
 
-    terraform fmt -var-files=dev.tfvars
+    TF_VAR_ENVIRONMENT=dev terragrunt fmt -var-files=dev.tfvars
 
-    terraform validate -var-files=dev.tfvars
+    TF_VAR_ENVIRONMENT=dev terragrunt validate -var-files=dev.tfvars
 
 Dev Plan:
 
-    terraform plan -var-files=dev.tfvars
+    TF_VAR_ENVIRONMENT=dev terragrunt plan -var-files=dev.tfvars
 
 Dev Apply:
 
-    terraform apply -var-files=dev.tfvars
+    TF_VAR_ENVIRONMENT=dev terragrunt apply -var-files=dev.tfvars
 
 
 Staging Init:
 
-    terraform init -var-files=staging.tfvars
+    TF_VAR_ENVIRONMENT=staging terragrunt init -var-files=staging.tfvars
 
 Staging Validate:
 
-    terraform fmt -var-files=staging.tfvars
+    TF_VAR_ENVIRONMENT=staging terragrunt fmt -var-files=staging.tfvars
 
-    terraform validate -var-files=staging.tfvars
+    TF_VAR_ENVIRONMENT=staging terragrunt validate -var-files=staging.tfvars
 
 Staging Plan:
 
-    terraform plan -var-files=staging.tfvars
+    TF_VAR_ENVIRONMENT=staging terragrunt plan -var-files=staging.tfvars
 
 Staging Apply:
 
-    terraform apply -var-files=staging.tfvars
+    TF_VAR_ENVIRONMENT=staging terragrunt apply -var-files=staging.tfvars
 
 Prod Init:
 
-    terraform init -var-files=prod.tfvars
+    TF_VAR_ENVIRONMENT=prod terragrunt init -var-files=prod.tfvars
 
 Prod Validate:
 
-    terraform fmt -var-files=prod.tfvars
+    TF_VAR_ENVIRONMENT=prod terragrunt fmt -var-files=prod.tfvars
 
-    terraform validate -var-files=prod.tfvars
+    TF_VAR_ENVIRONMENT=prod terragrunt validate -var-files=prod.tfvars
 
 Prod Plan:
 
-    terraform plan -var-files=prod.tfvars
+    TF_VAR_ENVIRONMENT=prod terragrunt plan -var-files=prod.tfvars
 
 Prod Apply:
 
-    terraform apply -var-files=prod.tfvars
+    TF_VAR_ENVIRONMENT=prod terragrunt apply -var-files=prod.tfvars
 
 ## Requirements
 
-No requirements.
+The following applications are required to run this pipeline.
+	1. AWS cli.
+	2. Terraform Version >= 0.12.0.
+	3. Terragrunt Version >= 0.21.6.
 
 ## Providers
+	
+	provider.aws: version = "~> 3.3"
 
-No provider.
 
 ## Inputs
 
