@@ -4,45 +4,59 @@ This git repo is designed to call the terraform module git::https://github.com/r
 Please use the below order in your CICD tool to build this using a pipeline.
 
 Dev Init:
+
     terraform init -var-files=dev.tfvars
 
 Dev Validate:
+
     terraform fmt -var-files=dev.tfvars
+
     terraform validate -var-files=dev.tfvars
 
 Dev Plan:
+
     terraform plan -var-files=dev.tfvars
 
 Dev Apply:
+
     terraform apply -var-files=dev.tfvars
 
 
 Staging Init:
+
     terraform init -var-files=staging.tfvars
 
 Staging Validate:
+
     terraform fmt -var-files=staging.tfvars
+
     terraform validate -var-files=staging.tfvars
 
 Staging Plan:
+
     terraform plan -var-files=staging.tfvars
 
 Staging Apply:
+
     terraform apply -var-files=staging.tfvars
 
 Prod Init:
+
     terraform init -var-files=prod.tfvars
 
 Prod Validate:
+
     terraform fmt -var-files=prod.tfvars
+
     terraform validate -var-files=prod.tfvars
 
 Prod Plan:
+
     terraform plan -var-files=prod.tfvars
 
 Prod Apply:
-    terraform apply -var-files=prod.tfvars
 
+    terraform apply -var-files=prod.tfvars
 
 ## Requirements
 
