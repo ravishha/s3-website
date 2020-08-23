@@ -1,3 +1,40 @@
+# README
+This git repo is designed to call the terraform module git::https://github.com/ravishha/aws-s3-static-website-module.git to build a s3 based static website in dev, staging and prod environments all from one location to the keep the code DRY (Don't Repeast Yourselves).
+
+Please use the below order in your CICD tool to build this using a pipeline.
+
+Dev Init:
+    terraform init -var-files=dev.tfvars
+Dev Validate:
+    terraform fmt -var-files=dev.tfvars
+    terraform validate -var-files=dev.tfvars
+Dev Plan:
+    terraform plan -var-files=dev.tfvars
+Dev Apply:
+    terraform apply -var-files=dev.tfvars
+
+
+Staging Init:
+    terraform init -var-files=staging.tfvars
+Staging Validate:
+    terraform fmt -var-files=staging.tfvars
+    terraform validate -var-files=staging.tfvars
+Staging Plan:
+    terraform plan -var-files=staging.tfvars
+Staging Apply:
+    terraform apply -var-files=staging.tfvars
+
+Prod Init:
+    terraform init -var-files=prod.tfvars
+Prod Validate:
+    terraform fmt -var-files=prod.tfvars
+    terraform validate -var-files=prod.tfvars
+Prod Plan:
+    terraform plan -var-files=prod.tfvars
+Prod Apply:
+    terraform apply -var-files=prod.tfvars
+
+
 ## Requirements
 
 No requirements.
@@ -10,17 +47,17 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| app | Application name | `string` | `"elsvier"` | no |
-| artifact\_dir | Host directory containng your website files | `string` | `"./src"` | no |
-| cert\_arn | ARN of the SSL certificate to use for the Cloudfront Distribution. If no value is provided, new certificate will be created automatically in us-east-1 region | `string` | `""` | no |
-| cname | CNAME Record to create | `string` | `"s3-static-website"` | no |
-| domain | Root domain name (i.e., example.com) | `string` | `"EXAMPLE.COM"` | no |
-| enable\_versioning | Enable version for the bucket objects (i.e., default is true) | `bool` | `true` | no |
-| error\_page | Path to point your error page | `string` | `"error.html"` | no |
-| index\_page | Path to point your index page | `string` | `"index.html"` | no |
-| region | AWS Deployed Region (i.e. eu-west-2) | `string` | `"eu-west-2"` | no |
-| stage | Deployed stage (i.e., dev, staging, prod) | `string` | `"development"` | no |
-| validation\_method | The certificate validation method to use - default is EMAIL | `string` | `"EMAIL"` | no |
+| app | Application name | `string` | `"elsvier"` | yes |
+| artifact\_dir | Host directory containng your website files | `string` | `"./src"` | yes |
+| cert\_arn | ARN of the SSL certificate to use for the Cloudfront Distribution. If no value is provided, new certificate will be created automatically in us-east-1 region | `string` | `""` | yes |
+| cname | CNAME Record to create | `string` | `"s3-static-website"` | yes |
+| domain | Root domain name (i.e., example.com) | `string` | `"EXAMPLE.COM"` | yes |
+| enable\_versioning | Enable version for the bucket objects (i.e., default is true) | `bool` | `true` | yes |
+| error\_page | Path to point your error page | `string` | `"error.html"` | yes |
+| index\_page | Path to point your index page | `string` | `"index.html"` | yes |
+| region | AWS Deployed Region (i.e. eu-west-2) | `string` | `"eu-west-2"` | yes |
+| stage | Deployed stage (i.e., dev, staging, prod) | `string` | `"development"` | yes |
+| validation\_method | The certificate validation method to use - default is EMAIL | `string` | `"EMAIL"` | yes |
 
 ## Outputs
 
