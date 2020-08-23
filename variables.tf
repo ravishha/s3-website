@@ -29,6 +29,7 @@ variable error_page {
 }
 
 variable enable_versioning {
+        description = "Enable version for the bucket objects (i.e., default is true)"
 	default	 =	true
 }
 

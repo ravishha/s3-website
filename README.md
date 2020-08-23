@@ -15,7 +15,7 @@ No provider.
 | cert\_arn | ARN of the SSL certificate to use for the Cloudfront Distribution. If no value is provided, new certificate will be created automatically in us-east-1 region | `string` | `""` | no |
 | cname | CNAME Record to create | `string` | `"s3-static-website"` | no |
 | domain | Root domain name (i.e., example.com) | `string` | `"EXAMPLE.COM"` | no |
-| enable\_versioning | n/a | `bool` | `true` | no |
+| enable\_versioning | Enable version for the bucket objects (i.e., default is true) | `bool` | `true` | no |
 | error\_page | Path to point your error page | `string` | `"error.html"` | no |
 | index\_page | Path to point your index page | `string` | `"index.html"` | no |
 | region | AWS Deployed Region (i.e. eu-west-2) | `string` | `"eu-west-2"` | no |
